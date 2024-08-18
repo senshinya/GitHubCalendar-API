@@ -22,9 +22,8 @@ def getdata(name):
 
     datalist = []
     for index, item in enumerate(datadate):
-        if datacount[index] == 0 {
+        if datacount[index] == 0:
             continue
-        }
         itemlist = {"date": item, "count": datacount[index]}
         datalist.append(itemlist)
     return datalist

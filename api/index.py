@@ -6,11 +6,6 @@ import json
 import os
 import re
 
-
-def list_split(items, n):
-    return [items[i : i + n] for i in range(0, len(items), n)]
-
-
 def getdata(name):
     data = requests.get(
         f'https://github.com/users/{name.replace("=","")}/contributions'
@@ -29,9 +24,7 @@ def getdata(name):
     for index, item in enumerate(datadate):
         itemlist = {"date": item, "count": datacount[index]}
         datalist.append(itemlist)
-    datalistsplit = list_split(datalist, 7)
-    returndata = datalistsplit
-    return returndata
+    return datalist
 
 
 def get_allow_origins():

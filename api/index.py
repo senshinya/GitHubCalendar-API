@@ -25,13 +25,12 @@ def getdata(name):
     if len(sorted_data) > 0:
         datadate, datacount = zip(*sorted_data)
 
-    contributions = sum(datacount)
     datalist = []
     for index, item in enumerate(datadate):
         itemlist = {"date": item, "count": datacount[index]}
         datalist.append(itemlist)
     datalistsplit = list_split(datalist, 7)
-    returndata = {"total": contributions, "contributions": datalistsplit}
+    returndata = datalistsplit
     return returndata
 
 
